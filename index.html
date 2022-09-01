@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Slut</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Game of Thrones SlutFinder</title>
 </head>
 <body>
-    
+    <div id="content">
+        <div id="title">
+            <h1>Game of Thrones SlutFinder</h1>
+        </div>
+        <form id="search-form">
+            <label>Category:</label>
+            <select id="search-dropdown">
+                <option value="characters">Characters</option>
+                <option value="houses">dont use this shit yet bitch</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Tormunds dumpsty..." required>
+            <input type="button" value="Search" onclick=Search()>
+        </form>
+        <div>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
