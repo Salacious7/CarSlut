@@ -5,10 +5,6 @@ GetGotCharacters()
 let lotrCharacers = []
 GetLotrCharacters()
 
-
-
-
-
 function Search()
 {
     if(input.value == '') return
