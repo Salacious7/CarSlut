@@ -1,4 +1,13 @@
 let input = document.getElementById('search-input')
+// U59i_Nfofd5eBN9oRfZu - LOTR api key
+let gotCharacters = []
+GetGotCharacters()
+let lotrCharacers = []
+GetLotrCharacters()
+
+
+
+
 
 function Search()
 {
@@ -42,22 +51,37 @@ function DisplayCharacterInfo(data)
     <label>Played by: </label><span>${data.playedBy}</span>`
 }
 
-// function SearchByHouse(searchCategory)
-// {
-//     let fetchUrl = apiMain
+async function GetGotCharacters()
+{
+    try
+    {
+        let response = await fetch('https://thronesapi.com/api/v2/characters')
+        response = await response.json()
+        gotCharacters = response
+        console.log(gotCharacters)
+    }
+    catch (error)
+    {
+        console.error(error)
+    }
+}
 
-//     let query = input.value
-//     query = query.trim()
-
-//     fetchUrl += searchCategory + '/?name=' + query.split(/\s+/).join('+')
-    
-//     fetch(fetchUrl)
-//         .then(response => response.json())
-//         .then(out => DisplayHouseInfo(out[0]))
-//         .catch(err => console.error(err))
-// }
-
-// function IsFirstName(name)
-// {
-//     return [...houseMap].find(([key, val]) => val == name)[0]
-// }
+async function GetLotrCharacters()
+{
+    try
+    {
+        let response = await fetch('https://the-one-api.dev/v2/character', 
+        {
+            headers: new Headers({
+                'Authorization': "Bearer U59i_Nfofd5eBN9oRfZu"
+            })
+        })
+        response = await response.json()
+        lotrCharacers = response
+        console.log(lotrCharacers)
+    }
+    catch (error)
+    {
+        console.error(error)
+    }
+}
